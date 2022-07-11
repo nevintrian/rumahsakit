@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 <div class="clearfix"></div>
 <footer class="main-footer">
-  <div id="mycredit"><strong> Copyright &copy; <?php echo date('Y'); ?> SI KLINIK X - RS BAKTI HUSADA
+  <div id="mycredit"><strong> Copyright &copy; <?php echo date('Y'); ?> SISTEM RME RSU BHAKTI HUSADA
   </div>
 </footer>
 

@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title><?php echo $title_web; ?> | Sistem Informasi Klinik X </title>
+  <title><?php echo $title_web; ?> | SISTEM RME RSU BHAKTI HUSADA </title>
   <!-- Tell the browser to be responsive to screen width -->
 
 
@@ -71,7 +71,7 @@
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>P</b>C</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg">SI RSU BH</span>
+        <span class="logo-lg">RME RSBH</span>
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">

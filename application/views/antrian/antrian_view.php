@@ -12,7 +12,7 @@
 
 
             <!-- Masthead Heading -->
-            <h1 class="masthead-heading text-uppercase mb-0"><img class="masthead-avatar mb-5" src="<?php echo base_url('assets_style') ?>/image/klinik.jpg" style="width:50%; justify-content:center" alt=""><br>KLINIK X - RS BAKTI HUSADA</h1>
+            <h1 class="masthead-heading text-uppercase mb-0"><img class="masthead-avatar mb-5" src="<?php echo base_url('assets_style') ?>/image/klinik.jpg" style="width:50%; justify-content:center" alt=""><br>SISTEM RME RSU BHAKTI HUSADA</h1>
             <?php if (!empty($this->session->userdata('ses_id'))) { ?>
                 <div class="row">
                     <div class="col-md-6" style="border: thin solid; ">
@@ -85,7 +85,7 @@
 
             <?php } ?>
             <?php if (empty($this->session->userdata('ses_id'))) { ?>
-                <h4 class="masthead mb-0" style="margin-top: 10px !important;padding: 20px;">SELAMAT DATANG DI SI KLINIK X - RS BAKTI HUSADA.
+                <h4 class="masthead mb-0" style="margin-top: 10px !important;padding: 20px;">SELAMAT DATANG DI SISTEM RME RSU BHAKTI HUSADA.
                     <br> Jika belum memiliki akun, silakan Registrasi terlebih dahulu.
                 </h4>
                 <div class="row">

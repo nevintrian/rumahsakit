@@ -57,50 +57,51 @@ class Pelayanan extends CI_Controller
     }
 
     public function add_rekam_medis()
-	{
+    {
         $id_daftar = htmlentities($this->input->post('id_daftar', TRUE));
         $no_rm = htmlentities($this->input->post('no_rm', TRUE));
-		$nama_pasien = htmlentities($this->input->post('nama_pasien', TRUE));
-		$anamnesa = htmlentities($this->input->post('anamnesis', TRUE));
-		$diagnosa = htmlentities($this->input->post('diagnosa', TRUE));
-		$pem_fisik = htmlentities($this->input->post('periksa_fisik', TRUE));
+        $nama_pasien = htmlentities($this->input->post('nama_pasien', TRUE));
+        $anamnesa = htmlentities($this->input->post('anamnesis', TRUE));
+        $diagnosa = htmlentities($this->input->post('diagnosa', TRUE));
+        $pem_fisik = htmlentities($this->input->post('periksa_fisik', TRUE));
         $tindakan = htmlentities($this->input->post('tindakan', TRUE));
-		$status = '1';
+        $kode_icd_x = htmlentities($this->input->post('kode_icd_x', TRUE));
+        $status = '1';
 
-			// setting konfigurasi upload
-			$nmfile = "user_" . time();
-			$config['upload_path'] = './assets_style/image/';
-			$config['allowed_types'] = 'gif|jpg|jpeg|png';
-			$config['file_name'] = $nmfile;
-			// load library upload
-			$this->load->library('upload', $config);
-			// upload gambar 1
-			$this->upload->do_upload('gambar');
-			$result1 = $this->upload->data();
-			$result = array('gambar' => $result1);
-			$data1 = array('upload_data' => $this->upload->data());
-			$data = array(
-                'id_daftar' => $id_daftar,
-                'no_rm' => $no_rm,
-				'nama_pasien' => $nama_pasien,
-				'anamnesa' => $anamnesa,
-				'diagnosa' => $diagnosa,
-				'pem_fisik' => $pem_fisik,
-                'tindakan' => $tindakan,
-				'foto' => $data1['upload_data']['file_name']
-			);
-			$this->db->insert('tabel_pelayanan', $data);
+        // setting konfigurasi upload
+        $nmfile = "user_" . time();
+        $config['upload_path'] = './assets_style/image/';
+        $config['allowed_types'] = 'gif|jpg|jpeg|png';
+        $config['file_name'] = $nmfile;
+        // load library upload
+        $this->load->library('upload', $config);
+        // upload gambar 1
+        $this->upload->do_upload('gambar');
+        $result1 = $this->upload->data();
+        $result = array('gambar' => $result1);
+        $data1 = array('upload_data' => $this->upload->data());
+        $data = array(
+            'id_daftar' => $id_daftar,
+            'no_rm' => $no_rm,
+            'nama_pasien' => $nama_pasien,
+            'anamnesa' => $anamnesa,
+            'diagnosa' => $diagnosa,
+            'pem_fisik' => $pem_fisik,
+            'tindakan' => $tindakan,
+            'kode_icd_x' => $kode_icd_x,
+            'foto' => $data1['upload_data']['file_name']
+        );
+        $this->db->insert('tabel_pelayanan', $data);
 
-            $data2 = array(
-                'status' => $status
-            );
-            $this->db->where('id_daftar', $id_daftar);
-            $this->db->update('tbl_daftar', $data2);
+        $data2 = array(
+            'status' => $status
+        );
+        $this->db->where('id_daftar', $id_daftar);
+        $this->db->update('tbl_daftar', $data2);
 
-			$this->session->set_flashdata('pesan', '<div id="notifikasi"><div class="alert alert-success">
+        $this->session->set_flashdata('pesan', '<div id="notifikasi"><div class="alert alert-success">
             <p> Input RM telah berhasil !</p>
             </div></div>');
-			redirect(base_url('Pelayanan'));
-		
-	}
+        redirect(base_url('Pelayanan'));
+    }
 }

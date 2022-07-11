@@ -82,7 +82,7 @@
 										<tr>
 											<td><?= $no; ?></td>
 											<td><?php echo $rows->tgl_kunjung ?></td>
-											<td>Klinik X</td>
+											<td>RSU BHAKTI HUSADA</td>
 											<td><?php echo $rows->nama_poli ?></td>
 											<td><?php echo $rows->anamnesa ?></td>
 											<td><?php echo $rows->diagnosa ?></td>

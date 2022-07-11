@@ -60,7 +60,7 @@ $tgl2 = $hari2 . ' ' . $bl2 . ' ' . $tahun2;
 		<page size="" class="col-md-7 col-md-offset-3">
 			<div class="panel panel-default">
 				<div class="panel-body" style="background-color: red !important">
-					<h4 class="text-center">KARTU IDENTITAS PETUGAS KESEHATAN KLINIK X</h4>
+					<h4 class="text-center">KARTU IDENTITAS PETUGAS KESEHATAN RME RSBH</h4>
 					<br />
 					<div class="row">
 						<div class="col-sm-7">

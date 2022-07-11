@@ -1,9 +1,11 @@
 <?php
 
-class M_cetak extends CI_Model {
+class M_cetak extends CI_Model
+{
 
     // Get data User for Cetak
-    public function get_user_for_cetak($id_login) {
+    public function get_user_for_cetak($id_login)
+    {
         $this->db->select('*');
         $this->db->from('tbl_login');
 
@@ -12,7 +14,8 @@ class M_cetak extends CI_Model {
         return $this->db->get();
     }
 
-    public function get_dokter_for_cetak($id_dokter) {
+    public function get_dokter_for_cetak($id_dokter)
+    {
         $this->db->select('*');
         $this->db->from('tabel_dokter a');
 
@@ -24,7 +27,8 @@ class M_cetak extends CI_Model {
         return $this->db->get();
     }
 
-    public function get_pasien_for_cetak($no_rm) {
+    public function get_pasien_for_cetak($no_rm)
+    {
         $this->db->select('*');
         $this->db->from('tabel_pasien');
 
@@ -33,10 +37,12 @@ class M_cetak extends CI_Model {
         return $this->db->get();
     }
 
-    public function get_resep_for_cetak($kode_resep) {
+    public function get_resep_for_cetak($kode_resep)
+    {
         $this->db->select('*');
         $this->db->from('tabel_resep a');
         $this->db->join('tabel_pasien b', 'a.no_rm=b.no_rm');
+        $this->db->join('tabel_obat c', 'a.id_obat=c.id_obat');
         $this->db->where('a.kode_resep', $kode_resep);
         return $this->db->get();
     }

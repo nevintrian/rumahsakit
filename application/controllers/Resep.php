@@ -21,7 +21,7 @@ class Resep extends CI_Controller
 	public function index()
 	{
 		$this->data['idbo'] = $this->session->userdata('ses_id');
-		$this->data['resep'] = $this->M_Admin->get_table('tabel_resep');
+		$this->data['resep'] = $this->db->query("SELECT * FROM tabel_resep join tabel_obat on tabel_resep.id_obat = tabel_obat.id_obat")->result_array();
 		$this->data['rmpasien'] = $this->M_Admin->get_table('tabel_pasien');
 		$this->data['poli'] = $this->M_Admin->get_table('tabel_poli');
 		$this->data['dokter'] = $this->M_Admin->get_table('tabel_dokter');
@@ -38,6 +38,9 @@ class Resep extends CI_Controller
 		$this->data['idbo'] = $this->session->userdata('ses_id');
 
 		$this->data['detailrm'] = $this->pelayanan_model->get_data_pelayanan_pasien_detail($id_daftar)->row();
+
+		$this->data['data_obat'] =  $this->db->query("SELECT * FROM tabel_obat ORDER BY id_obat DESC")->result();
+
 
 		$this->data['title_web'] = 'Tambah Resep ';
 		$this->load->view('header_view', $this->data);
@@ -87,6 +90,7 @@ class Resep extends CI_Controller
 
 		$this->data['detailrm'] = $this->pelayanan_model->get_data_pelayanan_pasien_detail($id_daftar)->row();
 		$this->data['resep'] = $this->pelayanan_model->get_data_resep($kode_resep)->row();
+		$this->data['data_obat'] =  $this->db->query("SELECT * FROM tabel_obat ORDER BY id_obat DESC")->result();
 
 		$this->data['title_web'] = 'Data Resep';
 		$this->load->view('header_view', $this->data);
@@ -133,7 +137,7 @@ class Resep extends CI_Controller
 			$tgl_resep = htmlentities($this->input->post('tgl_resep', TRUE));
 
 			$data = array(
-				'nama_obat' => $nama_obat,
+				'id_obat' => $nama_obat,
 				'jumlah' => $jumlah,
 				'aturan_pakai' => $aturan_pakai,
 				'tgl_resep' => $tgl_resep

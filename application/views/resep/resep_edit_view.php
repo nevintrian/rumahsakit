@@ -41,7 +41,12 @@
                                     </div> -->
                                     <div class="form-group">
                                         <label>Nama Obat</label>
-                                        <input type="text" class="form-control" name="nama_obat" required="required" placeholder="Nama Obat" value="<?= $resep->nama_obat ?>">
+                                        <select id="nama_obat" name="nama_obat" class="form-control" required>
+                                            <option disabled selected style="display: none;" value="">--Pilih Nama Obat--</option>
+                                            <?php foreach ($data_obat as $row) : ?>
+                                                <option value="<?= $row->id_obat ?>"><?= $row->nama_obat ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Jumlah & Aturan Pakai</label><br>

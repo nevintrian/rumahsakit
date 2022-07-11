@@ -46,7 +46,7 @@
 		<page size="A4">
 			<div class="panel panel-default">
 				<div class="panel-header">
-					<h2><b><center>Klinik X<center><b></h3>
+					<h2><b><center>RSU BHAKTI HUSADA<center><b></h3>
 					<h6><center>Jl. xxxxxxxxxxxxxxx<center></h6>
 				</div>
 				<div class="panel-body">

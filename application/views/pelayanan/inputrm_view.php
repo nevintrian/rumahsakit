@@ -49,7 +49,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -69,6 +69,10 @@
                                     <div class="form-group">
                                         <label>Pemeriksaan Fisik</label>
                                         <input type="text" class="form-control" name="periksa_fisik" required="required" placeholder="Pemeriksaan Fisik">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Kode ICD X</label>
+                                        <input type="text" class="form-control" name="kode_icd_x" required="required" placeholder="Kode ICD X">
                                     </div>
                                     <div class="form-group">
                                         <label>Upload File Hasil Uji Lab</label>

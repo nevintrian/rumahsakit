@@ -49,7 +49,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -63,6 +63,10 @@
                                     <div class="form-group">
                                         <label>Tindakan</label>
                                         <input type="text" class="form-control" name="tindakan" required="required" placeholder="Tindakan" value="<?= $detailrm->tindakan ?>" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Kode ICD X</label>
+                                        <input type="text" class="form-control" name="kode_icd_x" required="required" placeholder="Kode ICD X" value="<?= $detailrm->kode_icd_x ?>" readonly>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">

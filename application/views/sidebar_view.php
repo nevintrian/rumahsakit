@@ -155,6 +155,14 @@
                                 <span class="fa fa-tags"></span> Data Jadwal Poli
                             </a>
                         </li>
+
+                        <li class=" <?php if ($this->uri->uri_string() == 'obat') {
+                                        echo 'active';
+                                    } ?>">
+                            <a href="<?php echo base_url("obat"); ?>" class="cursor">
+                                <span class="fa fa-book"></span> Data Obat
+                            </a>
+                        </li>
                     </ul>
                 </li>
 

@@ -22,7 +22,7 @@
         <tr>
             <td align="center">
                 <span style="line-height: 1.6; font-weight: bold;">
-                    KLINIK X
+                 RSU BHAKTI HUSADA
                     <br>MAKASSAR INDONESIA
                 </span>
             </td>

@@ -18,7 +18,7 @@ class Laporanpdf extends CI_Controller
         // mencetak string
         $pdf->Cell(190, 7, 'LAPORAN DATA PASIEN', 0, 1, 'C');
         $pdf->SetFont('Arial', 'B', 12);
-        $pdf->Cell(190, 7, 'DATA PASIEN KLINIK X', 0, 1, 'C');
+        $pdf->Cell(190, 7, 'DATA PASIEN RSU BHAKTI HUSADA', 0, 1, 'C');
         // Memberikan space kebawah agar tidak terlalu rapat
         $pdf->Cell(10, 7, '', 0, 1);
         $pdf->SetFont('Arial', 'B', 10);

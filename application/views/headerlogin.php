@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title><?php echo $title_web; ?> | SI KLINIK X - RS BAKTI HUSADA </title>
+    <title><?php echo $title_web; ?> | SISTEM RME RSU BHAKTI HUSADA </title>
     <!-- Tell the browser to be responsive to screen width -->
 
 

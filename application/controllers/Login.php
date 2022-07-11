@@ -28,7 +28,7 @@ class Login extends CI_Controller
      */
     public function index()
     {
-        $this->data['title_web'] = 'SELAMAT DATANG DI SI KLINIK X - RS BAKTI HUSADA';
+        $this->data['title_web'] = 'SELAMAT DATANG DI SISTEM RME RSU BHAKTI HUSADA';
         $this->load->view('headerlogin', $this->data);
         $this->load->view('login_view', $this->data);
     }

@@ -52,7 +52,7 @@
 <div class="login-box" style="width: 860px;">
   <br />
   <div class="login-box-body text-center bg-blue">
-    <a style="color: yellow; font-size: 20px;"> SI KLINIK X - RS BAKTI HUSADA</a>
+    <a style="color: yellow; font-size: 20px;">SISTEM RME RSU BHAKTI HUSADA</a>
   </div>
 
   <div id="tampilalert"></div>
@@ -61,7 +61,7 @@
 
   <div class="container-fluid h-100" style="border:5px solid #226bbf;">
     <div class="row">
-      <div class="col-md-6 m-0 p-0" style="height: 240px; background-image: url('<?= base_url('assets_style/image/klinik_login.jpg'); ?>'); background-size: cover; background-position: center;">
+      <div class="col-md-6 m-0 p-0" style="height: 250px; background-image: url('<?= base_url('assets_style/image/logo_klinik_new.png'); ?>'); background-size: cover; background-position: center;">
 
       </div>
       <div class="col-md-6" style="height: 240px; background-color: white">

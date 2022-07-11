@@ -42,7 +42,7 @@ class Antrian extends CI_Controller
             $data['NoAntrian'] = 0;
         }
 
-        $data['title_web'] = 'SISTEM ANTRIAN KLINIK X';
+        $data['title_web'] = 'SISTEM ANTRIAN RSU BHAKTI HUSADA';
 
         $this->load->view('header_antrian', $data);
         $this->load->view('antrian/antrian_view', $data);
@@ -112,7 +112,7 @@ class Antrian extends CI_Controller
         $data['datakunjung'] = $this->kunjung->get_kunjungan()->result();
         $data['datajenis'] = $this->antrian->get_jenis_pasien()->result();
 
-        $data['title_web'] = 'SISTEM ANTRIAN KLINIK X';
+        $data['title_web'] = 'SISTEM ANTRIAN RSU BHAKTI HUSADA';
 
         $this->load->view('header_antrian', $data);
         $this->load->view('antrian/daftar_antrian_view', $data);
@@ -126,7 +126,7 @@ class Antrian extends CI_Controller
 
     public function regis()
     {
-        $data['title_web'] = 'SISTEM ANTRIAN KLINIK X';
+        $data['title_web'] = 'SISTEM ANTRIAN RSU BHAKTI HUSADA';
 
         $this->load->view('header_antrian', $data);
         $this->load->view('antrian/registrasi_view');
@@ -135,7 +135,7 @@ class Antrian extends CI_Controller
     public function login_antrian()
     {
 
-        $data['title_web'] = 'SISTEM ANTRIAN KLINIK X';
+        $data['title_web'] = 'SISTEM ANTRIAN RSU BHAKTI HUSADA';
 
         $this->load->view('header_antrian', $data);
         $this->load->view('antrian/login_view');
