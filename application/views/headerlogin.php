@@ -62,11 +62,11 @@
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="<?php echo base_url('index.php/dashboard'); ?>" class="logo">
+            <a href="<?php echo base_url('home'); ?>" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>P</b>C</span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg">SELAMAT DATANG</span>
+                <span class="logo-lg">Halaman Home</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
@@ -74,9 +74,9 @@
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        <li>
+                        <!-- <li>
                             <a href="<?php echo base_url(); ?>antrian/">DAFTAR ANTRIAN</a>
-                        </li>
+                        </li> -->
                         <!-- Control Sidebar Toggle Button 
           <li>
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
