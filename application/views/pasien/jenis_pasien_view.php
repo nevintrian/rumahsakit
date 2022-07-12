@@ -42,7 +42,7 @@
                                     <form method="post" action="<?= base_url('pasien/jenis_pasien_proses'); ?>">
                                         <div class="form-group">
                                             <label for="">Jenis Pasien</label>
-                                            <input type="text" name="jns_pasien" id="kunjung" class="form-control" placeholder="Contoh : BPJS">
+                                            <input type="text" name="jns_pasien" id="kunjung" required class="form-control" placeholder="Contoh : BPJS">
                                         </div>
                                         <br />
                                         <input type="hidden" name="tambah" value="tambah">

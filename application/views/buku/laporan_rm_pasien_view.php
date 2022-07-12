@@ -1,4 +1,11 @@
 <?php if (!defined('BASEPATH')) exit('No direct script acess allowed'); ?>
+<style>
+	table {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+</style>
 <div class="content-wrapper">
 	<section class="content-header">
 		<h1>

@@ -6,6 +6,7 @@ class Obat extends CI_Controller
     function __construct()
     {
         parent::__construct();
+
         //validasi jika user belum login
         $this->data['CI'] = &get_instance();
         $this->load->helper(array('form', 'url'));

@@ -56,9 +56,9 @@
                                             <option>Hindu</option>
                                             <option>Budha</option>
                                             <option>Katholik</option>
-                                       
+
                                         </select>
-                                        
+
                                     </div>
                                     <div class="form-group">
                                         <label>Pekerjaan</label>
@@ -70,16 +70,17 @@
                                     </div>
                                 </div>
                             </div>
-                    </div>
-                    <div class="pull-right">
-                        <input type="hidden" name="tambah" value="tambah">
-                        <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                            <div class="pull-right">
+                                <input type="hidden" name="tambah" value="tambah">
+                                <button type="submit" class="btn btn-primary btn-md">Submit</button>
                         </form>
                         <a href="<?= base_url('pasien'); ?>" class="btn btn-danger btn-md">Kembali</a>
                     </div>
                 </div>
+
             </div>
         </div>
+</div>
 </div>
 </section>
 </div>

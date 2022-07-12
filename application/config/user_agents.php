@@ -1,6 +1,6 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
- 
+defined('BASEPATH') or exit('No direct script access allowed');
+
 /*
 | -------------------------------------------------------------------
 | USER AGENT TYPES
@@ -93,19 +93,19 @@ $browsers = array(
 $mobiles = array(
 	// legacy array, old values commented out
 	'mobileexplorer'	=> 'Mobile Explorer',
-//  'openwave'			=> 'Open Wave',
-//	'opera mini'		=> 'Opera Mini',
-//	'operamini'			=> 'Opera Mini',
-//	'elaine'			=> 'Palm',
+	//  'openwave'			=> 'Open Wave',
+	//	'opera mini'		=> 'Opera Mini',
+	//	'operamini'			=> 'Opera Mini',
+	//	'elaine'			=> 'Palm',
 	'palmsource'		=> 'Palm',
-//	'digital paths'		=> 'Palm',
-//	'avantgo'			=> 'Avantgo',
-//	'xiino'				=> 'Xiino',
+	//	'digital paths'		=> 'Palm',
+	//	'avantgo'			=> 'Avantgo',
+	//	'xiino'				=> 'Xiino',
 	'palmscape'			=> 'Palmscape',
-//	'nokia'				=> 'Nokia',
-//	'ericsson'			=> 'Ericsson',
-//	'blackberry'		=> 'BlackBerry',
-//	'motorola'			=> 'Motorola'
+	//	'nokia'				=> 'Nokia',
+	//	'ericsson'			=> 'Ericsson',
+	//	'blackberry'		=> 'BlackBerry',
+	//	'motorola'			=> 'Motorola'
 
 	// Phones and Manufacturers
 	'motorola'		=> 'Motorola',
@@ -151,6 +151,12 @@ $mobiles = array(
 	'wii'			=> 'Nintendo Wii',
 	'open web'		=> 'Open Web',
 	'openweb'		=> 'OpenWeb',
+	'meizu'                 => 'Meizu',
+	'huawei'                => 'Huawei',
+	'xiaomi'                => 'Xiaomi',
+	'oppo'                  => 'Oppo',
+	'vivo'                  => 'Vivo',
+	'infinix'               => 'Infinix',
 
 	// Operating Systems
 	'android'		=> 'Android',
@@ -211,5 +217,6 @@ $robots = array(
 	'curious george'	=> 'Curious George',
 	'ia_archiver'		=> 'Alexa Crawler',
 	'MJ12bot'		=> 'Majestic-12',
-	'Uptimebot'		=> 'Uptimebot'
+	'Uptimebot'		=> 'Uptimebot',
+	'UptimeRobot'		=> 'UptimeRobot'
 );

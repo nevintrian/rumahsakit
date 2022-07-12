@@ -16,7 +16,7 @@
 		<page size="" class="col-md-7 col-md-offset-3">
 			<div class="panel panel-default">
 				<div class="panel-body" style="background-color: light-grey !important">
-					<h4 class="text-center">KARTU ANTRIAN PETUGAS KESEHATAN SISTEM RME RSU BHAKTI HUSADA</h4>
+					<h4 class="text-center">KARTU ANTRIAN RSU BHAKTI HUSADA</h4>
 					<br />
 					<div class="row">
 						<div class="col-sm-12">

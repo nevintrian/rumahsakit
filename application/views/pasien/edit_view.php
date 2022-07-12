@@ -53,24 +53,25 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Agama</label>
+
                                         <select name="agama" class="form-control" required="required">
-                                            
+                                            <option disabled selected style="display: none">--Pilih Agama--</option>
                                             <option <?php if ($rm_pasien->agama == 'Islam') {
-                                                                                echo 'selected';
-                                                                            } ?> value="Islam"> Islam </option>
+                                                        echo 'selected';
+                                                    } ?> value="Islam"> Islam </option>
                                             <option <?php if ($rm_pasien->agama == 'Kristen') {
-                                                                                echo 'selected';
-                                                                            } ?> value="Kristen"> Kristen </option>
+                                                        echo 'selected';
+                                                    } ?> value="Kristen"> Kristen </option>
                                             <option <?php if ($rm_pasien->agama == 'Hindu') {
-                                                                                echo 'selected';
-                                                                            } ?> value="Hindu"> Hindu </option>
+                                                        echo 'selected';
+                                                    } ?> value="Hindu"> Hindu </option>
                                             <option <?php if ($rm_pasien->agama == 'Budha') {
-                                                                                echo 'selected';
-                                                                            } ?> value="Budha"> Budha </option>
+                                                        echo 'selected';
+                                                    } ?> value="Budha"> Budha </option>
                                             <option <?php if ($rm_pasien->agama == 'Katholik') {
-                                                                                echo 'selected';
-                                                                            } ?> value="Katholik"> Katholik </option>
-                                      </select> 
+                                                        echo 'selected';
+                                                    } ?> value="Katholik"> Katholik </option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Pekerjaan</label>
@@ -82,18 +83,19 @@
                                     </div>
                                 </div>
                             </div>
-                    </div>
-                    <div class="pull-right">
-                        <input type="hidden" name="edit" value="<?= $rm_pasien->no_rm; ?>">
-                        <button type="submit" class="btn btn-primary btn-md">Edit Data</button>
+                            <div class="pull-right">
+                                <input type="hidden" name="edit" value="<?= $rm_pasien->no_rm; ?>">
+                                <button type="submit" class="btn btn-primary btn-md">Edit Data</button>
                         </form>
                         <?php if ($this->session->userdata('level') == 'Petugas RM') { ?>
                             <a href="<?= base_url('data'); ?>" class="btn btn-danger btn-md">Kembali</a>
                         <?php } ?>
                     </div>
                 </div>
+
             </div>
         </div>
+</div>
 </div>
 </section>
 </div>

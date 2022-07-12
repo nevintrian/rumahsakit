@@ -28,28 +28,37 @@
                                         <label>Nama Dokter</label>
                                         <input type="text" class="form-control" name="nama_dokter" value="<?= $data_dokter->nama; ?>" required="required" placeholder="Nama Dokter" readonly>
                                     </div>
+
+
+
+
                                     <div class="form-group">
                                         <label>Poli</label>
                                         <select id="InputPoli" name="id_poli" value="<?= $data_dokter->id_poli; ?>" class="form-control" required>
-                                                <?php foreach ($datapoli as $row):?>
-                                                    <option value="<?= $row->id_poli?>" ><?= $row->nama_poli?></option>
-                                                <?php endforeach; ?>
+                                            <?php foreach ($datapoli as $row) : ?>
+                                                <option value="<?= $row->id_poli ?>" <?php if ($row->id_poli == $data_dokter->id_poli) echo 'selected="selected"'; ?>><?php echo $row->nama_poli; ?></option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
+
+
+
                                 </div>
                             </div>
+                            <div class="pull-right">
+                                <input type="hidden" name="edit" value="<?= $data_dokter->id_dokter; ?>">
+                                <button type="submit" class="btn btn-primary btn-md">Edit Data</button>
+                        </form>
+                        <?php if ($this->session->userdata('level') == 'Petugas RM') { ?>
+                            <a href="<?= base_url('data'); ?>" class="btn btn-danger btn-md">Kembali</a>
+                        <?php } ?>
                     </div>
                 </div>
-                <div class="pull-right">
-                    <input type="hidden" name="edit" value="<?= $data_dokter->id_dokter; ?>">
-                    <button type="submit" class="btn btn-primary btn-md">Edit Data</button>
-                    </form>
-                    <?php if ($this->session->userdata('level') == 'Petugas RM') { ?>
-                        <a href="<?= base_url('data'); ?>" class="btn btn-danger btn-md">Kembali</a>
-                    <?php } ?>
-                </div>
+
             </div>
+
         </div>
+</div>
 </div>
 </div>
 </section>

@@ -33,11 +33,11 @@
 
 <body onload='window.print()' style="font-size: 12px;margin-top:0;position:absolute;">
 	<div style="width: 340px; height: 207px; margin-bottom:10px; background-image: url('<?= base_url('assets_style/desain_kartu/desain_kartu.png'); ?>');">
-		<!-- <img style="position: absolute;margin-left: 10px;margin-top: 90px;" src="<?= base_url('assets_style/image/'.$cetak_kartu->foto); ?>" width="75.5px" height="75.5px"> -->
+		<!-- <img style="position: absolute;margin-left: 10px;margin-top: 90px;" src="<?= base_url('assets_style/image/' . $cetak_kartu->foto); ?>" width="75.5px" height="75.5px"> -->
 		<img style="position: absolute;margin-left: 20px;margin-top: 8px;" src="<?= base_url('assets_style/desain_kartu/logo_medis.png'); ?>" width="60px" height="60px">
 		<div style="padding-top: 5px;">
 			<p style="margin-top: 3px; right:10px; position: absolute;font-family: Cambria;font-size: 15px;"><strong>Kartu Identitas Berobat</strong></p>
-			<p style="margin-top: 19px; right:10px; position: absolute;font-family: Cambria;font-size: 18px;text-transform: uppercase;"><strong>Klinik Rawat Jalan X</strong></p>
+			<p style="margin-top: 19px; right:10px; position: absolute;font-family: Cambria;font-size: 18px;text-transform: uppercase;"><strong>RSU BHAKTI HUSADA</strong></p>
 			<table style="margin-top: 70px; position: absolute; right:80px; text-align: left; font-family: Cambria;font-size: 12px;">
 				<tr>
 					<td>No. RM</td>

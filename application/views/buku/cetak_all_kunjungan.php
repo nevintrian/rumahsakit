@@ -24,11 +24,16 @@
 			padding-bottom: 1.54cm;
 		}
 
-		@media print 
-{
-  @page { margin: 0; box-shadow: 0; }
-  body  { margin: 0cm; }
-}
+		@media print {
+			@page {
+				margin: 0;
+				box-shadow: 0;
+			}
+
+			body {
+				margin: 0cm;
+			}
+		}
 	</style>
 </head>
 
@@ -46,8 +51,11 @@
 		<page size="A4">
 			<div class="panel panel-default">
 				<div class="panel-header">
-					<h2><b><center>RSU BHAKTI HUSADA<center><b></h3>
-					<h6><center>Jl. xxxxxxxxxxxxxxx<center></h6>
+					<h2><b>
+							<center>RSU BHAKTI HUSADA<center><b></h3>
+										<h6>
+											<center>Jl. rs Bhakti Husada No. 11 Dsn. Krajan, Tegalharjo, Kec. Glenmore, <br>Kabupaten Banyuangi, Jawa Timur, 68466<center>
+										</h6>
 				</div>
 				<div class="panel-body">
 					<h4 class="text-center">LAPORAN KUNJUNGAN PASIEN</h4>
@@ -55,27 +63,27 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<table id="example1" class="table table-bordered table-striped table" width="100%">
-                                <thead>
-                                    <tr>
-                                        <th>No RM</th>
-                                        <th>Nama Pasien</th>
-                                        <th>Jenis Pasien</th>
-                                        <th>Kunjungan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php $no = 1;
-                                    foreach ($kunjungan as $isi) { ?>
-                                        <tr>
-                                            <td><?= $isi->no_rm; ?></td>
-                                            <td><?= $isi->nama_pasien; ?></td>
-                                            <td><?= $isi->jns_pasien; ?></td>
-                                            <td><?= $isi->jns_kunjung; ?></td>
-                                        </tr>
-                                    <?php $no++;
-                                    } ?>
-                                </tbody>
-                            </table>
+								<thead>
+									<tr>
+										<th>No RM</th>
+										<th>Nama Pasien</th>
+										<th>Jenis Pasien</th>
+										<th>Kunjungan</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php $no = 1;
+									foreach ($kunjungan as $isi) { ?>
+										<tr>
+											<td><?= $isi->no_rm; ?></td>
+											<td><?= $isi->nama_pasien; ?></td>
+											<td><?= $isi->jns_pasien; ?></td>
+											<td><?= $isi->jns_kunjung; ?></td>
+										</tr>
+									<?php $no++;
+									} ?>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>

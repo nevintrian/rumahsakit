@@ -43,7 +43,7 @@
                                     <form method="post" action="<?= base_url('kunjung/kunjungproses'); ?>">
                                         <div class="form-group">
                                             <label for="">Cara Kunjung</label>
-                                            <input type="text" name="kunjung" id="kunjung" class="form-control" placeholder="Contoh : Datang Sendiri">
+                                            <input type="text" name="kunjung" required id="kunjung" class="form-control" placeholder="Contoh : Datang Sendiri">
 
                                         </div>
                                         <br />

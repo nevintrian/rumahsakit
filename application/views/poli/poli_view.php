@@ -50,7 +50,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="">Nama Poli</label>
-                                            <input type="text" name="poli" id="poli" class="form-control" placeholder="Contoh : Poli Umum">
+                                            <input type="text" name="poli" id="poli" class="form-control" required placeholder="Contoh : Poli Umum">
 
                                         </div>
                                         <br />

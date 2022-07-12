@@ -39,15 +39,17 @@
                                         <label>Kode Resep</label>
                                         <input type="text" class="form-control" name="kode_resep" required="required" placeholder="Kode Resep">
                                     </div> -->
+
                                     <div class="form-group">
                                         <label>Nama Obat</label>
-                                        <select id="nama_obat" name="nama_obat" class="form-control" required>
-                                            <option disabled selected style="display: none;" value="">--Pilih Nama Obat--</option>
+                                        <select id="InputPoli" name="nama_obat" value="<?= $resep->id_obat; ?>" class="form-control" required>
                                             <?php foreach ($data_obat as $row) : ?>
-                                                <option value="<?= $row->id_obat ?>"><?= $row->nama_obat ?></option>
+                                                <option value="<?= $row->id_obat ?>" <?php if ($row->id_obat == $resep->id_obat) echo 'selected="selected"'; ?>><?php echo $row->nama_obat; ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
+
+
                                     <div class="form-group">
                                         <label>Jumlah & Aturan Pakai</label><br>
                                         <input type="number" class="form-control w-25" style="width: 25%; display:inline;" name="jumlah" required="required" placeholder="Jumlah" value="<?= $resep->jumlah ?>">

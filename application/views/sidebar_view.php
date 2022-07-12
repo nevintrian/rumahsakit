@@ -63,7 +63,14 @@
                 } ?>
                 <?php if ($this->uri->uri_string() == 'poli/jadwal_poli') {
                     echo 'active';
-                } ?>">
+                } ?>
+                    <?php if ($this->uri->uri_string() == 'obat') {
+                        echo 'active';
+                    } ?>
+                
+                
+                ">
+
                     <!-- akhir koding yakk -->
 
                     <a href="#">
@@ -86,6 +93,7 @@
                         <?php if ($this->uri->uri_string() == 'user/edit/' . $this->uri->segment('3')) {
                             echo 'active';
                         } ?>">
+
                             <a href="<?php echo base_url("user"); ?>" class="cursor">
                                 <span class="fa fa-user"></span> Data user
                             </a>
@@ -160,7 +168,7 @@
                                         echo 'active';
                                     } ?>">
                             <a href="<?php echo base_url("obat"); ?>" class="cursor">
-                                <span class="fa fa-book"></span> Data Obat
+                                <span class="fa fa-tags"></span> Data Obat
                             </a>
                         </li>
                     </ul>
@@ -246,6 +254,9 @@
 				<?php if ($this->uri->uri_string() == 'data1') {
                     echo 'active';
                 } ?>
+                	<?php if ($this->uri->uri_string() == 'pelayanan') {
+                        echo 'active';
+                    } ?>
 				<?php if ($this->uri->uri_string() == 'data1/bukutambah1') {
                     echo 'active';
                 } ?>
@@ -279,12 +290,11 @@
                                 <span class="fa fa-book"></span> Jadwal poli
                             </a>
                         </li>
-                        <li class=" <?php if ($this->uri->uri_string() == 'pelayanan/') {
+                        <li class=" <?php if ($this->uri->uri_string() == 'pelayanan') {
                                         echo 'active';
                                     } ?>">
-                            <a href="<?php echo base_url("pelayanan/"); ?>" class="cursor">
+                            <a href="<?php echo base_url("pelayanan"); ?>" class="cursor">
                                 <span class="fa fa-tags"></span> Catatan Medis Pasien
-
                             </a>
                         </li>
 

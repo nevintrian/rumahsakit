@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Des 2021 pada 12.36
--- Versi server: 10.1.37-MariaDB
--- Versi PHP: 7.3.0
+-- Generation Time: Jul 11, 2022 at 01:56 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `antrian`
+-- Table structure for table `antrian`
 --
 
 CREATE TABLE `antrian` (
@@ -37,7 +36,7 @@ CREATE TABLE `antrian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `antrian`
+-- Dumping data for table `antrian`
 --
 
 INSERT INTO `antrian` (`id_antrian`, `tgl_antrian`, `no_antrian`, `id_daftar`, `no_rm`) VALUES
@@ -46,12 +45,13 @@ INSERT INTO `antrian` (`id_antrian`, `tgl_antrian`, `no_antrian`, `id_daftar`, `
 (17, '2021-12-20', '3', 22, 000001),
 (18, '2021-12-20', '4', 23, 000003),
 (19, '2021-12-20', '5', 24, 000004),
-(20, '2021-12-21', '1', 25, 000001);
+(20, '2021-12-21', '1', 25, 000001),
+(21, '2022-07-11', '1', 26, 000007);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `antrian_poli`
+-- Table structure for table `antrian_poli`
 --
 
 CREATE TABLE `antrian_poli` (
@@ -66,7 +66,7 @@ CREATE TABLE `antrian_poli` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_dokter`
+-- Table structure for table `tabel_dokter`
 --
 
 CREATE TABLE `tabel_dokter` (
@@ -77,7 +77,7 @@ CREATE TABLE `tabel_dokter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_dokter`
+-- Dumping data for table `tabel_dokter`
 --
 
 INSERT INTO `tabel_dokter` (`id_dokter`, `id_login`, `nama_dokter`, `id_poli`) VALUES
@@ -88,7 +88,7 @@ INSERT INTO `tabel_dokter` (`id_dokter`, `id_login`, `nama_dokter`, `id_poli`) V
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_jadwalpoli`
+-- Table structure for table `tabel_jadwalpoli`
 --
 
 CREATE TABLE `tabel_jadwalpoli` (
@@ -100,7 +100,7 @@ CREATE TABLE `tabel_jadwalpoli` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tabel_jadwalpoli`
+-- Dumping data for table `tabel_jadwalpoli`
 --
 
 INSERT INTO `tabel_jadwalpoli` (`no_rm`, `jam_buka`, `jam_tutup`, `hari`, `id_dokter`) VALUES
@@ -117,7 +117,7 @@ INSERT INTO `tabel_jadwalpoli` (`no_rm`, `jam_buka`, `jam_tutup`, `hari`, `id_do
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_jenis_pasien`
+-- Table structure for table `tabel_jenis_pasien`
 --
 
 CREATE TABLE `tabel_jenis_pasien` (
@@ -126,7 +126,7 @@ CREATE TABLE `tabel_jenis_pasien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_jenis_pasien`
+-- Dumping data for table `tabel_jenis_pasien`
 --
 
 INSERT INTO `tabel_jenis_pasien` (`id_jns_pasien`, `jns_pasien`) VALUES
@@ -137,7 +137,7 @@ INSERT INTO `tabel_jenis_pasien` (`id_jns_pasien`, `jns_pasien`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_kunjung`
+-- Table structure for table `tabel_kunjung`
 --
 
 CREATE TABLE `tabel_kunjung` (
@@ -146,7 +146,7 @@ CREATE TABLE `tabel_kunjung` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_kunjung`
+-- Dumping data for table `tabel_kunjung`
 --
 
 INSERT INTO `tabel_kunjung` (`id_kunjung`, `cara_kunjung`) VALUES
@@ -159,7 +159,28 @@ INSERT INTO `tabel_kunjung` (`id_kunjung`, `cara_kunjung`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_pasien`
+-- Table structure for table `tabel_obat`
+--
+
+CREATE TABLE `tabel_obat` (
+  `id_obat` int(11) NOT NULL,
+  `nama_obat` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tabel_obat`
+--
+
+INSERT INTO `tabel_obat` (`id_obat`, `nama_obat`) VALUES
+(1, 'amoksilin'),
+(2, 'oskadon oye'),
+(3, 'paracetamol'),
+(5, 'bronsitin max');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tabel_pasien`
 --
 
 CREATE TABLE `tabel_pasien` (
@@ -177,7 +198,7 @@ CREATE TABLE `tabel_pasien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tabel_pasien`
+-- Dumping data for table `tabel_pasien`
 --
 
 INSERT INTO `tabel_pasien` (`no_rm`, `no_identitas`, `nama_pasien`, `alamat`, `j_kel`, `tgl_lahir`, `agama`, `pekerjaan`, `no_telp`, `username`, `pass`) VALUES
@@ -186,12 +207,13 @@ INSERT INTO `tabel_pasien` (`no_rm`, `no_identitas`, `nama_pasien`, `alamat`, `j
 (000003, '412482873', 'Joko', 'Surabaya', 'Laki-Laki', '2010-02-02', '', '', '0987654321', 'joko21', '6fb75cfc8d65674d998f50efbc7a33c6'),
 (000004, '0214889088', 'Jeno Le', 'Semarang', 'Perempuan', '2021-12-02', '', '', '0987654321', 'jeno123', '658c5298bd772d21476086d0cc9fae94'),
 (000005, '343434343434', 'Nathu', 'Semarang', 'Laki-Laki', '2021-12-20', 'Kristen', 'Mahasiswa', '0987654321', 'nathu123', '5215acf52feba1548959c410c05fba2b'),
-(000006, '8787878787', 'Anis', 'Surakarta', 'Perempuan', '2002-02-22', 'Islam', 'Sales', '0987654321', '', '');
+(000006, '8787878787', 'Anis', 'Surakarta', 'Perempuan', '2002-02-22', 'Islam', 'Sales', '0987654321', '', ''),
+(000007, 'E41171239', 'Nevin', 'jember', 'Laki-Laki', '2001-02-28', 'Islam', 'pns', '08973268121', 'nevin', '57dd6150d6302a88892a0c5e09dfc7fc');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_pelayanan`
+-- Table structure for table `tabel_pelayanan`
 --
 
 CREATE TABLE `tabel_pelayanan` (
@@ -203,21 +225,23 @@ CREATE TABLE `tabel_pelayanan` (
   `diagnosa` text NOT NULL,
   `pem_fisik` text NOT NULL,
   `tindakan` text NOT NULL,
+  `kode_icd_x` varchar(200) NOT NULL,
   `foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tabel_pelayanan`
+-- Dumping data for table `tabel_pelayanan`
 --
 
-INSERT INTO `tabel_pelayanan` (`id_pelayanan`, `id_daftar`, `no_rm`, `nama_pasien`, `anamnesa`, `diagnosa`, `pem_fisik`, `tindakan`, `foto`) VALUES
-(4, 20, 000001, 'Reza Fauzan', 'SEHAT', 'Sehat', 'SEHAT', 'Sehat', 'user_1639969762.jpeg'),
-(5, 24, 000004, 'Jeno Le', 'SEHAT', 'Sakit', 'Sakit', 'Sakit', 'user_1639992031.jpeg');
+INSERT INTO `tabel_pelayanan` (`id_pelayanan`, `id_daftar`, `no_rm`, `nama_pasien`, `anamnesa`, `diagnosa`, `pem_fisik`, `tindakan`, `kode_icd_x`, `foto`) VALUES
+(4, 20, 000001, 'Reza Fauzan', 'SEHAT', 'Sehat', 'SEHAT', 'Sehat', 'abc', 'user_1639969762.jpeg'),
+(5, 24, 000004, 'Jeno Le', 'SEHAT', 'Sakit', 'Sakit', 'Sakit', 'def', 'user_1639992031.jpeg'),
+(6, 26, 000007, 'Nevin', 'sehat', 'sehat', 'sehat', 'tidak ada', 'ghi', 'user_1657538544.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_poli`
+-- Table structure for table `tabel_poli`
 --
 
 CREATE TABLE `tabel_poli` (
@@ -227,7 +251,7 @@ CREATE TABLE `tabel_poli` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tabel_poli`
+-- Dumping data for table `tabel_poli`
 --
 
 INSERT INTO `tabel_poli` (`id_poli`, `tanggal`, `nama_poli`) VALUES
@@ -239,7 +263,7 @@ INSERT INTO `tabel_poli` (`id_poli`, `tanggal`, `nama_poli`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tabel_resep`
+-- Table structure for table `tabel_resep`
 --
 
 CREATE TABLE `tabel_resep` (
@@ -247,24 +271,25 @@ CREATE TABLE `tabel_resep` (
   `no_rm` int(6) UNSIGNED ZEROFILL NOT NULL,
   `nama_pasien` varchar(50) NOT NULL,
   `kode_resep` int(5) NOT NULL,
-  `nama_obat` varchar(30) NOT NULL,
+  `id_obat` varchar(30) NOT NULL,
   `jumlah` varchar(5) NOT NULL,
   `aturan_pakai` text NOT NULL,
   `tgl_resep` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tabel_resep`
+-- Dumping data for table `tabel_resep`
 --
 
-INSERT INTO `tabel_resep` (`id_daftar`, `no_rm`, `nama_pasien`, `kode_resep`, `nama_obat`, `jumlah`, `aturan_pakai`, `tgl_resep`) VALUES
-(20, 000001, 'Reza Fauzan', 7, 'Paracetamol', '3', '2x Sehari', '2021-12-20'),
-(24, 000004, 'Jeno Le', 9, 'Paracetamol', '2', '2x Sehari', '2021-12-20');
+INSERT INTO `tabel_resep` (`id_daftar`, `no_rm`, `nama_pasien`, `kode_resep`, `id_obat`, `jumlah`, `aturan_pakai`, `tgl_resep`) VALUES
+(20, 000001, 'Reza Fauzan', 7, '1', '3', '2x Sehari', '2022-07-11'),
+(24, 000004, 'Jeno Le', 9, '3', '2', '2x Sehari', '2021-12-20'),
+(26, 000007, 'Nevin', 10, '2', '12', '3 x sehari', '2022-07-11');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_biaya_denda`
+-- Table structure for table `tbl_biaya_denda`
 --
 
 CREATE TABLE `tbl_biaya_denda` (
@@ -275,7 +300,7 @@ CREATE TABLE `tbl_biaya_denda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_biaya_denda`
+-- Dumping data for table `tbl_biaya_denda`
 --
 
 INSERT INTO `tbl_biaya_denda` (`id_biaya_denda`, `harga_denda`, `stat`, `tgl_tetap`) VALUES
@@ -284,7 +309,7 @@ INSERT INTO `tbl_biaya_denda` (`id_biaya_denda`, `harga_denda`, `stat`, `tgl_tet
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_buku`
+-- Table structure for table `tbl_buku`
 --
 
 CREATE TABLE `tbl_buku` (
@@ -299,13 +324,13 @@ CREATE TABLE `tbl_buku` (
   `penerbit` varchar(255) DEFAULT NULL,
   `pengarang` varchar(255) DEFAULT NULL,
   `thn_buku` varchar(255) DEFAULT NULL,
-  `isi` text,
+  `isi` text DEFAULT NULL,
   `jml` int(11) DEFAULT NULL,
   `tgl_masuk` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_buku`
+-- Dumping data for table `tbl_buku`
 --
 
 INSERT INTO `tbl_buku` (`id_buku`, `buku_id`, `id_kategori`, `id_rak`, `sampul`, `isbn`, `lampiran`, `title`, `penerbit`, `pengarang`, `thn_buku`, `isi`, `jml`, `tgl_masuk`) VALUES
@@ -314,7 +339,7 @@ INSERT INTO `tbl_buku` (`id_buku`, `buku_id`, `id_kategori`, `id_rak`, `sampul`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_daftar`
+-- Table structure for table `tbl_daftar`
 --
 
 CREATE TABLE `tbl_daftar` (
@@ -330,7 +355,7 @@ CREATE TABLE `tbl_daftar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_daftar`
+-- Dumping data for table `tbl_daftar`
 --
 
 INSERT INTO `tbl_daftar` (`id_daftar`, `no_rm`, `jns_pasien`, `tgl_masuk`, `tgl_kunjung`, `jns_kunjung`, `cara_kunjung`, `id_dokter`, `status`) VALUES
@@ -339,12 +364,13 @@ INSERT INTO `tbl_daftar` (`id_daftar`, `no_rm`, `jns_pasien`, `tgl_masuk`, `tgl_
 (22, 000001, '2', '2021-12-20', '2021-12-20', 'Lama', '1', '40008', 0),
 (23, 000003, '2', '2021-12-20', '2021-12-20', 'Baru', '2', '40009', 0),
 (24, 000004, '2', '2021-12-20', '2021-12-20', 'Baru', '1', '40007', 2),
-(25, 000001, '5', '2021-12-21', '2021-12-21', 'Lama', '4', '40007', 0);
+(25, 000001, '5', '2021-12-21', '2021-12-21', 'Lama', '4', '40007', 0),
+(26, 000007, '3', '2022-07-11', '2022-07-11', 'Baru', '1', '40007', 2);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_denda`
+-- Table structure for table `tbl_denda`
 --
 
 CREATE TABLE `tbl_denda` (
@@ -356,7 +382,7 @@ CREATE TABLE `tbl_denda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_denda`
+-- Dumping data for table `tbl_denda`
 --
 
 INSERT INTO `tbl_denda` (`id_denda`, `pinjam_id`, `denda`, `lama_waktu`, `tgl_denda`) VALUES
@@ -366,7 +392,7 @@ INSERT INTO `tbl_denda` (`id_denda`, `pinjam_id`, `denda`, `lama_waktu`, `tgl_de
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_kategori`
+-- Table structure for table `tbl_kategori`
 --
 
 CREATE TABLE `tbl_kategori` (
@@ -375,7 +401,7 @@ CREATE TABLE `tbl_kategori` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_kategori`
+-- Dumping data for table `tbl_kategori`
 --
 
 INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`) VALUES
@@ -384,7 +410,7 @@ INSERT INTO `tbl_kategori` (`id_kategori`, `nama_kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_login`
+-- Table structure for table `tbl_login`
 --
 
 CREATE TABLE `tbl_login` (
@@ -405,7 +431,7 @@ CREATE TABLE `tbl_login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_login`
+-- Dumping data for table `tbl_login`
 --
 
 INSERT INTO `tbl_login` (`id_login`, `anggota_id`, `user`, `pass`, `level`, `nama`, `tempat_lahir`, `tgl_lahir`, `jenkel`, `alamat`, `telepon`, `email`, `tgl_bergabung`, `foto`) VALUES
@@ -418,7 +444,7 @@ INSERT INTO `tbl_login` (`id_login`, `anggota_id`, `user`, `pass`, `level`, `nam
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_pinjam`
+-- Table structure for table `tbl_pinjam`
 --
 
 CREATE TABLE `tbl_pinjam` (
@@ -434,7 +460,7 @@ CREATE TABLE `tbl_pinjam` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_pinjam`
+-- Dumping data for table `tbl_pinjam`
 --
 
 INSERT INTO `tbl_pinjam` (`id_pinjam`, `pinjam_id`, `anggota_id`, `buku_id`, `status`, `tgl_pinjam`, `lama_pinjam`, `tgl_balik`, `tgl_kembali`) VALUES
@@ -444,7 +470,7 @@ INSERT INTO `tbl_pinjam` (`id_pinjam`, `pinjam_id`, `anggota_id`, `buku_id`, `st
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tbl_rak`
+-- Table structure for table `tbl_rak`
 --
 
 CREATE TABLE `tbl_rak` (
@@ -453,7 +479,7 @@ CREATE TABLE `tbl_rak` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tbl_rak`
+-- Dumping data for table `tbl_rak`
 --
 
 INSERT INTO `tbl_rak` (`id_rak`, `nama_rak`) VALUES
@@ -464,221 +490,233 @@ INSERT INTO `tbl_rak` (`id_rak`, `nama_rak`) VALUES
 --
 
 --
--- Indeks untuk tabel `antrian`
+-- Indexes for table `antrian`
 --
 ALTER TABLE `antrian`
   ADD PRIMARY KEY (`id_antrian`);
 
 --
--- Indeks untuk tabel `antrian_poli`
+-- Indexes for table `antrian_poli`
 --
 ALTER TABLE `antrian_poli`
   ADD PRIMARY KEY (`id_antrian_poli`);
 
 --
--- Indeks untuk tabel `tabel_dokter`
+-- Indexes for table `tabel_dokter`
 --
 ALTER TABLE `tabel_dokter`
   ADD PRIMARY KEY (`id_dokter`);
 
 --
--- Indeks untuk tabel `tabel_jadwalpoli`
+-- Indexes for table `tabel_jadwalpoli`
 --
 ALTER TABLE `tabel_jadwalpoli`
   ADD PRIMARY KEY (`no_rm`);
 
 --
--- Indeks untuk tabel `tabel_jenis_pasien`
+-- Indexes for table `tabel_jenis_pasien`
 --
 ALTER TABLE `tabel_jenis_pasien`
   ADD PRIMARY KEY (`id_jns_pasien`);
 
 --
--- Indeks untuk tabel `tabel_kunjung`
+-- Indexes for table `tabel_kunjung`
 --
 ALTER TABLE `tabel_kunjung`
   ADD PRIMARY KEY (`id_kunjung`);
 
 --
--- Indeks untuk tabel `tabel_pasien`
+-- Indexes for table `tabel_obat`
+--
+ALTER TABLE `tabel_obat`
+  ADD PRIMARY KEY (`id_obat`);
+
+--
+-- Indexes for table `tabel_pasien`
 --
 ALTER TABLE `tabel_pasien`
   ADD PRIMARY KEY (`no_rm`);
 
 --
--- Indeks untuk tabel `tabel_pelayanan`
+-- Indexes for table `tabel_pelayanan`
 --
 ALTER TABLE `tabel_pelayanan`
   ADD PRIMARY KEY (`id_pelayanan`);
 
 --
--- Indeks untuk tabel `tabel_poli`
+-- Indexes for table `tabel_poli`
 --
 ALTER TABLE `tabel_poli`
   ADD PRIMARY KEY (`id_poli`);
 
 --
--- Indeks untuk tabel `tabel_resep`
+-- Indexes for table `tabel_resep`
 --
 ALTER TABLE `tabel_resep`
   ADD PRIMARY KEY (`kode_resep`);
 
 --
--- Indeks untuk tabel `tbl_biaya_denda`
+-- Indexes for table `tbl_biaya_denda`
 --
 ALTER TABLE `tbl_biaya_denda`
   ADD PRIMARY KEY (`id_biaya_denda`);
 
 --
--- Indeks untuk tabel `tbl_buku`
+-- Indexes for table `tbl_buku`
 --
 ALTER TABLE `tbl_buku`
   ADD PRIMARY KEY (`id_buku`);
 
 --
--- Indeks untuk tabel `tbl_daftar`
+-- Indexes for table `tbl_daftar`
 --
 ALTER TABLE `tbl_daftar`
   ADD PRIMARY KEY (`id_daftar`);
 
 --
--- Indeks untuk tabel `tbl_denda`
+-- Indexes for table `tbl_denda`
 --
 ALTER TABLE `tbl_denda`
   ADD PRIMARY KEY (`id_denda`);
 
 --
--- Indeks untuk tabel `tbl_kategori`
+-- Indexes for table `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
   ADD PRIMARY KEY (`id_kategori`);
 
 --
--- Indeks untuk tabel `tbl_login`
+-- Indexes for table `tbl_login`
 --
 ALTER TABLE `tbl_login`
   ADD PRIMARY KEY (`id_login`);
 
 --
--- Indeks untuk tabel `tbl_pinjam`
+-- Indexes for table `tbl_pinjam`
 --
 ALTER TABLE `tbl_pinjam`
   ADD PRIMARY KEY (`id_pinjam`);
 
 --
--- Indeks untuk tabel `tbl_rak`
+-- Indexes for table `tbl_rak`
 --
 ALTER TABLE `tbl_rak`
   ADD PRIMARY KEY (`id_rak`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `antrian`
+-- AUTO_INCREMENT for table `antrian`
 --
 ALTER TABLE `antrian`
-  MODIFY `id_antrian` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_antrian` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `antrian_poli`
+-- AUTO_INCREMENT for table `antrian_poli`
 --
 ALTER TABLE `antrian_poli`
   MODIFY `id_antrian_poli` int(4) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_dokter`
+-- AUTO_INCREMENT for table `tabel_dokter`
 --
 ALTER TABLE `tabel_dokter`
   MODIFY `id_dokter` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40010;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_jadwalpoli`
+-- AUTO_INCREMENT for table `tabel_jadwalpoli`
 --
 ALTER TABLE `tabel_jadwalpoli`
   MODIFY `no_rm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_jenis_pasien`
+-- AUTO_INCREMENT for table `tabel_jenis_pasien`
 --
 ALTER TABLE `tabel_jenis_pasien`
   MODIFY `id_jns_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_kunjung`
+-- AUTO_INCREMENT for table `tabel_kunjung`
 --
 ALTER TABLE `tabel_kunjung`
   MODIFY `id_kunjung` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_pasien`
+-- AUTO_INCREMENT for table `tabel_obat`
+--
+ALTER TABLE `tabel_obat`
+  MODIFY `id_obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tabel_pasien`
 --
 ALTER TABLE `tabel_pasien`
-  MODIFY `no_rm` int(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `no_rm` int(6) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_pelayanan`
+-- AUTO_INCREMENT for table `tabel_pelayanan`
 --
 ALTER TABLE `tabel_pelayanan`
-  MODIFY `id_pelayanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_pelayanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_poli`
+-- AUTO_INCREMENT for table `tabel_poli`
 --
 ALTER TABLE `tabel_poli`
   MODIFY `id_poli` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT untuk tabel `tabel_resep`
+-- AUTO_INCREMENT for table `tabel_resep`
 --
 ALTER TABLE `tabel_resep`
-  MODIFY `kode_resep` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `kode_resep` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_biaya_denda`
+-- AUTO_INCREMENT for table `tbl_biaya_denda`
 --
 ALTER TABLE `tbl_biaya_denda`
   MODIFY `id_biaya_denda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_buku`
+-- AUTO_INCREMENT for table `tbl_buku`
 --
 ALTER TABLE `tbl_buku`
   MODIFY `id_buku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_daftar`
+-- AUTO_INCREMENT for table `tbl_daftar`
 --
 ALTER TABLE `tbl_daftar`
-  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_denda`
+-- AUTO_INCREMENT for table `tbl_denda`
 --
 ALTER TABLE `tbl_denda`
   MODIFY `id_denda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_kategori`
+-- AUTO_INCREMENT for table `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
   MODIFY `id_kategori` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_login`
+-- AUTO_INCREMENT for table `tbl_login`
 --
 ALTER TABLE `tbl_login`
   MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_pinjam`
+-- AUTO_INCREMENT for table `tbl_pinjam`
 --
 ALTER TABLE `tbl_pinjam`
   MODIFY `id_pinjam` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `tbl_rak`
+-- AUTO_INCREMENT for table `tbl_rak`
 --
 ALTER TABLE `tbl_rak`
   MODIFY `id_rak` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

@@ -50,7 +50,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="">Nama Obat</label>
-                                            <input type="text" name="nama_obat" id="nama_obat" class="form-control" placeholder="Contoh : obat Umum">
+                                            <input type="text" name="nama_obat" required id="nama_obat" class="form-control" placeholder="Contoh : obat Umum">
 
                                         </div>
                                         <br />
