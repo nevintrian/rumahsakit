@@ -29,6 +29,18 @@ class M_antrian extends CI_Model
         return $this->db->get();
     }
 
+    public function get_count_antrian()
+    {
+        $this->db->select('*');
+        $this->db->from('antrian a');
+
+        $this->db->join('tbl_daftar b', 'a.id_daftar=b.id_daftar');
+        $this->db->where('a.tgl_antrian = CURDATE()');
+        $this->db->where('b.status', '0');
+
+        return $this->db->count_all_results();
+    }
+
     public function get_jenis_pasien()
     {
         $this->db->select('*');
@@ -58,6 +70,7 @@ class M_antrian extends CI_Model
         $this->db->join('tabel_pasien', 'tabel_pasien.no_rm = tbl_daftar.no_rm');
         $this->db->join('antrian', 'antrian.id_daftar = tbl_daftar.id_daftar');
         $this->db->where('tbl_daftar.no_rm', $no_rm);
+        $this->db->where('tbl_daftar.status', 0);
         return $this->db->get();
     }
 

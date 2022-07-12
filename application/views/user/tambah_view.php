@@ -46,6 +46,7 @@
                                             <option>Kepala Rekam Medik</option>
                                             <option>Dokter Poliklinik</option>
                                             <option>Petugas Pendaftaran</option>
+                                            <option>Pasien</option>
                                         </select>
                                     </div>
                                 </div>
@@ -67,7 +68,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Pas Foto</label>
-                                        <input type="file" accept="image/*" name="gambar" required="required">
+                                        <input type="file" accept="image/*" name="gambar">
                                     </div>
                                     <div class="form-group">
                                         <label>Alamat</label>

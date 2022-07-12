@@ -33,7 +33,7 @@
 
 <body onload='window.print()' style="font-size: 12px;margin-top:0;position:absolute;">
 	<div style="width: 794px; height: 397px; margin-bottom:10px; background-image: url('<?= base_url('assets_style/desain_kartu/bingkai_cetak_resep.png'); ?>');">
-		<img style="position: absolute;margin-left: 180px;margin-top: 10px;" src="<?= base_url('assets_style/desain_kartu/logo_medis.png'); ?>" width="80px" height="80px">
+		<img style="position: absolute;margin-left: 180px;margin-top: 10px;" src="<?= base_url('assets_style/image/logo_klinik_new1.jpg'); ?>" width="80px" height="80px">
 		<div style="padding-top: 5px;">
 			<p style="margin-top: 3px; left:345px; position: absolute;font-family: Cambria;font-size: 25px;"><strong>Laporan Resep</strong></p>
 			<p style="margin-top: 25px; left:280px; position: absolute;font-family: Cambria;font-size: 30px;text-transform: uppercase;"><strong>RSU BHAKTI HUSADA</strong></p>

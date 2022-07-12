@@ -24,11 +24,16 @@
 			padding-bottom: 1.54cm;
 		}
 
-		@media print 
-{
-  @page { margin: 0; box-shadow: 0; }
-  body  { margin: 0cm; }
-}
+		@media print {
+			@page {
+				margin: 0;
+				box-shadow: 0;
+			}
+
+			body {
+				margin: 0cm;
+			}
+		}
 	</style>
 </head>
 
@@ -46,8 +51,9 @@
 		<page size="A4">
 			<div class="panel panel-default">
 				<div class="panel-header">
-					<h2><b><center>Laporan RL4<center><b></h3>
-					<!-- <h6><center>Jl. xxxxxxxxxxxxxxx<center></h6> -->
+					<h2><b>
+							<center>Laporan RL 4B<center><b></h3>
+										<!-- <h6><center>Jl. rs Bhakti Husada No. 11 Dsn. Krajan, Tegalharjo, Kec. Glenmore, <br>Kabupaten Banyuangi, Jawa Timur, 68466<center></h6> -->
 				</div>
 				<div class="panel-body">
 					<!-- <h4 class="text-center">LAPORAN REKAM MEDIS PASIEN</h4> -->
@@ -58,7 +64,7 @@
 					</table>
 					<div class="row">
 						<div class="col-sm-12">
-						<table id="example1" class="table table-bordered table-striped table" width="100%">
+							<table id="example1" class="table table-bordered table-striped table" width="100%">
 								<thead>
 									<tr>
 										<th>No</th>
@@ -71,15 +77,15 @@
 								</thead>
 								<tbody>
 									<?php $no = 1; ?>
-										<tr>
-											<td><?= $no; ?></td>
-											<td><?php echo $laporan_rl4->no_rm ?></td>
-											<td><?php echo $laporan_rl4->nama_pasien ?></td>
-											<td><?php echo $laporan_rl4->diagnosa ?></td>
-											<td><?php echo $laporan_rl4->nama_poli ?></td>
-											<td><?php echo $laporan_rl4->nama_dokter ?></td>
-										</tr>
-										<?php $no++; ?>
+									<tr>
+										<td><?= $no; ?></td>
+										<td><?php echo $laporan_rl4->no_rm ?></td>
+										<td><?php echo $laporan_rl4->nama_pasien ?></td>
+										<td><?php echo $laporan_rl4->diagnosa ?></td>
+										<td><?php echo $laporan_rl4->nama_poli ?></td>
+										<td><?php echo $laporan_rl4->nama_dokter ?></td>
+									</tr>
+									<?php $no++; ?>
 								</tbody>
 							</table>
 						</div>

@@ -12,7 +12,9 @@
 
 
             <!-- Masthead Heading -->
-            <h1 class="masthead-heading text-uppercase mb-0"><img class="masthead-avatar mb-5" src="<?php echo base_url('assets_style') ?>/image/klinik.jpg" style="width:50%; justify-content:center" alt=""><br>SISTEM RME RSU BHAKTI HUSADA</h1>
+            <br>
+            <img src="assets_style/image/logo_klinik_new1.jpg" alt="">
+            <h1 class="masthead-heading text-uppercase mb-0">SISTEM RME RSU BHAKTI HUSADA</h1>
             <?php if (!empty($this->session->userdata('ses_id'))) { ?>
                 <div class="row">
                     <div class="col-md-6" style="border: thin solid; ">
@@ -40,14 +42,20 @@
                         <h3><?php echo $poli_umum; ?></h3>
                         <H6>Poli Umum</H6>
                     </div> -->
-                    <div class="col-md-12">
-                        <div class="box box-primary">
-                            <div class="box-header with-border">
-                                <a href="<?php echo base_url('antrian/daftar_antrian') ?>"><button class="btn btn-primary">
-                                        <i class="fa fa-plus"> </i> Daftar Antrian </button></a>
+                    <?php if ($count_antrian >= 20) { ?>
+                        <h1>Maaf, antrian hari ini sudah penuh</h1>
+                        <br>
+                    <?php } else if (empty($daftar_antrian)) { ?>
+                        <div class="col-md-12">
+                            <div class="box box-primary">
+                                <div class="box-header with-border">
+                                    <a href="<?php echo base_url('antrian/daftar_antrian') ?>"><button class="btn btn-primary">
+                                            <i class="fa fa-plus"> </i> Daftar Antrian </button></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    <?php  } ?>
+
                 </div>
 
                 <table class="table table-stripped">
@@ -92,8 +100,8 @@
                     <div class="col-md-12">
                         <div class="box box-primary">
                             <div class="box-header with-border">
-                                <a href="<?php echo base_url('antrian/regis') ?>"><button class="btn btn-primary">
-                                        <i class="fa fa-plus"> </i> Registrasi </button></a>
+                                <!-- <a href="<?php echo base_url('antrian/regis') ?>"><button class="btn btn-primary">
+                                        <i class="fa fa-plus"> </i> Registrasi </button></a> -->
                                 <a href="<?php echo base_url('antrian/login_antrian') ?>"><button class="btn btn-primary">
                                         <i class="fa fa-plus"> </i> Login </button></a>
                             <?php } ?>

@@ -20,7 +20,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        <form action="<?php echo base_url('pasien/prosesrm'); ?>" method="POST" enctype="multipart/form-data">
+                        <form action="<?php echo base_url('daftar/tambah_pasien_new'); ?>" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label>No Telepon</label>
-                                        <input type="number" class="form-control" name="no_telp" required="required" placeholder="08x-xxx-xxx-xxx">
+                                        <input type="Text" class="form-control" name="no_telp" required="required" placeholder="08x-xxx-xxx-xxx">
                                     </div>
                                     <br>
                                     <b>Daftarkan pasien untuk login (opsional) :</b>

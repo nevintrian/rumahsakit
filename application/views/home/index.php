@@ -99,7 +99,7 @@
                     <input class="form-control me-2 button-color text-center" type="search" placeholder="Search" aria-label="Search" />
                 </form> -->
                 <a class="nav-item">
-                    <a class="nav-link active text-light" aria-current="page" href="login">Login</a>
+                    <a class="nav-link active text-light" aria-current="page" href="login">Login Petugas</a>
                 </a>
             </div>
         </div>

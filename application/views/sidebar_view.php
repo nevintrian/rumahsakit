@@ -227,7 +227,7 @@
                                         echo 'active';
                                     } ?>">
                             <a href="<?php echo base_url("data/laporan_rl4"); ?>" class="cursor">
-                                <span class="fa fa-tags"></span> Laporan RL 4
+                                <span class="fa fa-tags"></span> Laporan RL 4B
                             </a>
                         </li>
                     </ul>

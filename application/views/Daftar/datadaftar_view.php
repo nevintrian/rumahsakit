@@ -54,14 +54,12 @@
                                             <td><?= $isi['jns_pasien']; ?></td>
                                             <td><?= $isi['nama_poli']; ?></td>
                                             <td><?= $isi['nama_dokter']; ?></td>
-                                            <td <?php if ($this->session->userdata('level') == 'Kepala Rekam Medik') { ?>style="width:20%;" <?php } ?>>
+                                            <td <?php if ($this->session->userdata('level') == 'Petugas Pendaftaran') { ?>style="width:20%;" <?php } ?>>
 
-                                                <?php if ($this->session->userdata('level') == 'Kepala Rekam Medik') { ?>
+                                                <?php if ($this->session->userdata('level') == 'Petugas Pendaftaran') { ?>
+                                                    <a href="<?= base_url('daftar/edit_rj/' . $isi['id_daftar']); ?>"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a>
                                                     <a href="<?= base_url('daftar/prosespx?id_daftar=' . $isi['id_daftar']); ?>" onclick="return confirm('Anda yakin Akan Menghapus Data pendaftaran Ini ?');">
                                                         <button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
-                                                    <a href="<?= base_url('daftar/edit_rj/' . $isi['id_daftar']); ?>"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a>
-
-
                                                 <?php } ?>
                                             </td>
                                         </tr>

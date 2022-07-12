@@ -28,7 +28,7 @@
                                         <label>Jenis Pasien</label>
                                         <select id="jenis_kelamin" name="jns_pasien" class="form-control" required>
                                             <option disabled selected style="display:none">--Pilih Jenis Pasien--</option>
-                                            <?php foreach($datajenis as $dj) : ?>
+                                            <?php foreach ($datajenis as $dj) : ?>
                                                 <option value="<?= $dj->id_jns_pasien ?>"><?= $dj->jns_pasien ?></option>
                                             <?php endforeach; ?>
                                         </select>
@@ -43,19 +43,19 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Jenis kunjungan</label>
-                                         <select name="jns_kunjung" class="form-control" required="required">
+                                        <select name="jns_kunjung" class="form-control" required="required">
                                             <option disabled selected style="display: none;">--Pilih Jenis Kunjungan--</option>
                                             <option value="Lama">Lama</option>
                                             <option value="Baru">Baru</option>
-                                            
+
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Cara Kunjungan</label>
                                         <select id="InputKunjung" name="cara_kunjung" class="form-control" required>
                                             <option disabled selected style="display: none;" value="">--Pilih Cara Kunjungan--</option>
-                                            <?php foreach ($data_kunjung as $row):?>
-                                                <option value="<?= $row->id_kunjung?>" ><?= $row->cara_kunjung?></option>
+                                            <?php foreach ($data_kunjung as $row) : ?>
+                                                <option value="<?= $row->id_kunjung ?>"><?= $row->cara_kunjung ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
@@ -63,8 +63,8 @@
                                         <label>Tujuan Poli</label>
                                         <select id="InputPoli" name="ke_poli" class="form-control" required>
                                             <option disabled selected style="display: none;" value="">--Pilih Tujuan Poli--</option>
-                                            <?php foreach ($data_poli as $row):?>
-                                                <option value="<?= $row->id_poli?>" ><?= $row->nama_poli?></option>
+                                            <?php foreach ($data_poli as $row) : ?>
+                                                <option value="<?= $row->id_poli ?>" ><?= $row->nama_poli ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div> -->
@@ -72,23 +72,24 @@
                                         <label>Pilih Dokter</label>
                                         <select id="InputDokter" name="nama_dokter" class="form-control" required>
                                             <option disabled selected style="display: none;" value="">--Pilih Dokter--</option>
-                                            <?php foreach ($data_dokter as $row):?>
-                                                <option value="<?= $row->id_dokter?>" ><?= $row->nama_dokter?></option>
+                                            <?php foreach ($data_dokter as $row) : ?>
+                                                <option value="<?= $row->id_dokter ?>"><?= $row->nama_dokter ?></option>
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                    </div>
-                    <div class="pull-right">
-                        <input type="hidden" name="tambah" value="tambah">
-                        <button type="submit" class="btn btn-primary btn-md">Submit</button>
+                            <div class="pull-right">
+                                <input type="hidden" name="tambah" value="tambah">
+                                <button type="submit" class="btn btn-primary btn-md">Submit</button>
                         </form>
                         <a href="<?= base_url('daftar'); ?>" class="btn btn-danger btn-md">Kembali</a>
                     </div>
                 </div>
+
             </div>
         </div>
+</div>
 </div>
 </section>
 </div>

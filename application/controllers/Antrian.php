@@ -22,8 +22,9 @@ class Antrian extends CI_Controller
     {
         $no_rm = $this->session->userdata('ses_id');
         $daftar_antrian = $this->antrian->get_daftar_antrian($no_rm)->result();
+        $count_antrian = $this->antrian->get_count_antrian();
         $data['daftar_antrian'] = $daftar_antrian;
-
+        $data['count_antrian'] = $count_antrian;
         $data['idbo'] = $this->session->userdata('ses_id');
 
         $antrian = $this->antrian->get_jumlah_antrian()->row();

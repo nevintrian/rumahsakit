@@ -59,12 +59,13 @@
 
   <!-- /.login-logo -->
 
-  <div class="container-fluid h-100" style="border:5px solid #226bbf;">
+  <div class="container-fluid h-100" style="background-color:white; border:5px solid #226bbf;">
     <div class="row">
-      <div class="col-md-6 m-0 p-0" style="height: 250px; background-image: url('<?= base_url('assets_style/image/logo_klinik_new.png'); ?>'); background-size: cover; background-position: center;">
 
+      <div class="col-md-6 m-0 p-0" style="background-color: white;">
+        <img src="assets_style/image/logo_klinik_new1.jpg" height="200" style="margin: 20px; overflow: hidden;" alt="">
       </div>
-      <div class="col-md-6" style="height: 240px; background-color: white">
+      <div class="col-md-6" style="background-color: white; margin-top: 40px;">
         <p class="login-box-msg" style="font-size:16px;"></p>
         <form action="<?= base_url('login/auth'); ?>" method="POST">
           <div class="form-group has-feedback">

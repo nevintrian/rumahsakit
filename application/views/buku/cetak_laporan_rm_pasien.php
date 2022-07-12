@@ -24,11 +24,16 @@
 			padding-bottom: 1.54cm;
 		}
 
-		@media print 
-{
-  @page { margin: 0; box-shadow: 0; }
-  body  { margin: 0cm; }
-}
+		@media print {
+			@page {
+				margin: 0;
+				box-shadow: 0;
+			}
+
+			body {
+				margin: 0cm;
+			}
+		}
 	</style>
 </head>
 
@@ -46,17 +51,34 @@
 		<page size="A4">
 			<div class="panel panel-default">
 				<div class="panel-header">
-					<h2><b><center>Data Riwayat Kesehatan (Medical Record) Pasien<center><b></h3>
-					<!-- <h6><center>Jl. xxxxxxxxxxxxxxx<center></h6> -->
+					<h2><b>
+							<center>Data Riwayat Kesehatan (Medical Record) Pasien<center><b></h3>
+										<!-- <h6><center>Jl. rs Bhakti Husada No. 11 Dsn. Krajan, Tegalharjo, Kec. Glenmore, <br>Kabupaten Banyuangi, Jawa Timur, 68466<center></h6> -->
 				</div>
 				<div class="panel-body">
 					<!-- <h4 class="text-center">LAPORAN REKAM MEDIS PASIEN</h4> -->
 					<table border="0">
 						<tbody>
-							<tr><td>Tgl. Reg</td><td>:</td><td><?= $rows->tgl_masuk ?></td></tr>
-							<tr><td>No. RM &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td><td>:</td><td><?= $rows->no_rm ?></td></tr>
-							<tr><td>Nama</td><td>:</td><td><?= $rows->nama_pasien ?></td></tr>
-							<tr><td>Tgl. Lahir</td><td>:</td><td><?= $rows->tgl_lahir ?></td></tr>
+							<tr>
+								<td>Tgl. Reg</td>
+								<td>:</td>
+								<td><?= $rows->tgl_masuk ?></td>
+							</tr>
+							<tr>
+								<td>No. RM &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+								<td>:</td>
+								<td><?= $rows->no_rm ?></td>
+							</tr>
+							<tr>
+								<td>Nama</td>
+								<td>:</td>
+								<td><?= $rows->nama_pasien ?></td>
+							</tr>
+							<tr>
+								<td>Tgl. Lahir</td>
+								<td>:</td>
+								<td><?= $rows->tgl_lahir ?></td>
+							</tr>
 						</tbody>
 					</table>
 					<div class="row">
@@ -79,21 +101,21 @@
 								</thead>
 								<tbody>
 									<?php $no = 1; ?>
-										<tr>
-											<td><?= $no; ?></td>
-											<td><?php echo $rows->tgl_kunjung ?></td>
-											<td>RSU BHAKTI HUSADA</td>
-											<td><?php echo $rows->nama_poli ?></td>
-											<td><?php echo $rows->anamnesa ?></td>
-											<td><?php echo $rows->diagnosa ?></td>
-											<td><?php echo $rows->tindakan ?></td>
-											<td><?php echo $rows->pem_fisik ?></td>
-											<td><?php echo $rows->nama_obat ?></td>
-											<td><?php echo $rows->jumlah ?></td>
-											<td><?php echo $rows->aturan_pakai ?></td>
-										</tr>
-										<?php $no++;
-										?>
+									<tr>
+										<td><?= $no; ?></td>
+										<td><?php echo $rows->tgl_kunjung ?></td>
+										<td>RSU BHAKTI HUSADA</td>
+										<td><?php echo $rows->nama_poli ?></td>
+										<td><?php echo $rows->anamnesa ?></td>
+										<td><?php echo $rows->diagnosa ?></td>
+										<td><?php echo $rows->tindakan ?></td>
+										<td><?php echo $rows->pem_fisik ?></td>
+										<td><?php echo $rows->nama_obat ?></td>
+										<td><?php echo $rows->jumlah ?></td>
+										<td><?php echo $rows->aturan_pakai ?></td>
+									</tr>
+									<?php $no++;
+									?>
 								</tbody>
 							</table>
 						</div>

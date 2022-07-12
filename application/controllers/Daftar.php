@@ -220,6 +220,56 @@ class Daftar extends CI_Controller
         $this->load->view('footer_view', $this->data);
     }
 
+    public function tambah_new()
+    {
+        $this->data['idbo'] = $this->session->userdata('ses_id');
+        $this->data['user'] = $this->M_Admin->get_table('tbl_login');
+        $this->data['title_web'] = 'Tambah Pasien ';
+
+
+        $this->load->view('header_view', $this->data);
+        $this->load->view('sidebar_view', $this->data);
+        $this->load->view('daftar/tambahpasiennew_view', $this->data);
+        $this->load->view('footer_view', $this->data);
+    }
+
+    public function tambah_pasien_new()
+    {
+        if (isset($_POST['username'])) {
+            $user = htmlentities($this->input->post('username', TRUE));
+            $dd = $this->db->query("SELECT * FROM tabel_pasien WHERE username = '$user'");
+        } else {
+            $num = 1;
+        }
+
+        if ($dd->num_rows() > 0 || $num == 1) {
+            $this->session->set_flashdata('pesan', '<div id="notifikasi"><div class="alert alert-warning">
+			<p> Gagal Tambah Pasien !, Username Anda Sudah Terpakai</p>
+			</div></div>');
+            redirect(base_url('daftar/tambah_new'));
+        } else {
+            $post = $this->input->post();
+            $data = array(
+                'no_identitas' => htmlentities($post['no_identitas']),
+                'nama_pasien' => htmlentities($post['nama_pasien']),
+                'alamat' => $this->input->post('alamat'),
+                'j_kel' => htmlentities($post['j_kel']),
+                'tgl_lahir' => htmlentities($post['tgl_lahir']),
+                'agama' => htmlentities($post['agama']),
+                'pekerjaan' => htmlentities($post['pekerjaan']),
+                'no_telp' => htmlentities($post['no_telp']),
+                'username' => htmlentities($post['username']),
+                'pass' => md5(htmlentities($post['password']))
+            );
+
+            $this->db->insert('tabel_pasien', $data);
+            $this->session->set_flashdata('pesan', '<div id="notifikasi"><div class="alert alert-success">
+            <p> Daftar Pasien telah berhasil !</p>
+            </div></div>');
+            redirect(base_url('daftar'));
+        }
+    }
+
     public function tambah_pasien()
     {
 

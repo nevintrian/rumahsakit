@@ -87,7 +87,7 @@
                         <!-- Control Sidebar Toggle Button  -->
                         <?php if (!empty($this->session->userdata('ses_id'))) { ?>
                             <li>
-                                <a href="<?php echo base_url(); ?>login/logout_pasien">Logout</a>
+                                <a onclick="return confirm('Anda yakin ingin logout?');" href="<?php echo base_url(); ?>login/logout_pasien">Logout</a>
                             </li>
                         <?php } else {
                         } ?>

@@ -52,6 +52,7 @@ class User extends CI_Controller
 
 	public function add()
 	{
+
 		// format tabel / kode baru 3 hurup / id tabel / order by limit ngambil data terakhir
 		$id = $this->M_Admin->buat_kode('tbl_login', 'AG', 'id_login', 'ORDER BY id_login DESC LIMIT 1');
 		$nama = htmlentities($this->input->post('nama', TRUE));
@@ -71,35 +72,49 @@ class User extends CI_Controller
 			</div></div>');
 			redirect(base_url('user/tambah'));
 		} else {
-			// setting konfigurasi upload
-			$nmfile = "user_" . time();
-			$config['upload_path'] = './assets_style/image/';
-			$config['allowed_types'] = 'gif|jpg|jpeg|png';
-			$config['file_name'] = $nmfile;
-			// load library upload
-			$this->load->library('upload', $config);
-			// upload gambar 1
-			$this->upload->do_upload('gambar');
-			$result1 = $this->upload->data();
-			$result = array('gambar' => $result1);
-			$data1 = array('upload_data' => $this->upload->data());
-			$data = array(
-				'anggota_id' => $id,
-				'nama' => $nama,
-				'user' => $user,
-				'pass' => $pass,
-				'level' => $level,
-				'tempat_lahir' => $_POST['lahir'],
-				'tgl_lahir' => $_POST['tgl_lahir'],
-				'level' => $level,
-				'email' => $_POST['email'],
-				'telepon' => $telepon,
-				'foto' => $data1['upload_data']['file_name'],
-				'jenkel' => $jenkel,
-				'alamat' => $alamat,
-				'tgl_bergabung' => date('Y-m-d')
-			);
-			$this->db->insert('tbl_login', $data);
+
+			if ($this->input->post('level') == 'Pasien') {
+				$data = array(
+					'nama_pasien' => $_POST['nama'],
+					'alamat' => $_POST['alamat'],
+					'j_kel' => $_POST['jenkel'],
+					'tgl_lahir' => $_POST['tgl_lahir'],
+					'no_telp' => $_POST['telepon'],
+					'username' => $_POST['user'],
+					'pass' => md5($_POST['pass']),
+				);
+				$this->db->insert('tabel_pasien', $data);
+			} else {
+				// setting konfigurasi upload
+				$nmfile = "user_" . time();
+				$config['upload_path'] = './assets_style/image/';
+				$config['allowed_types'] = 'gif|jpg|jpeg|png';
+				$config['file_name'] = $nmfile;
+				// load library upload
+				$this->load->library('upload', $config);
+				// upload gambar 1
+				$this->upload->do_upload('gambar');
+				$result1 = $this->upload->data();
+				$result = array('gambar' => $result1);
+				$data1 = array('upload_data' => $this->upload->data());
+				$data = array(
+					'anggota_id' => $id,
+					'nama' => $nama,
+					'user' => $user,
+					'pass' => $pass,
+					'level' => $level,
+					'tempat_lahir' => $_POST['lahir'],
+					'tgl_lahir' => $_POST['tgl_lahir'],
+					'level' => $level,
+					'email' => $_POST['email'],
+					'telepon' => $telepon,
+					'foto' => $data1['upload_data']['file_name'],
+					'jenkel' => $jenkel,
+					'alamat' => $alamat,
+					'tgl_bergabung' => date('Y-m-d')
+				);
+				$this->db->insert('tbl_login', $data);
+			}
 
 			$this->session->set_flashdata('pesan', '<div id="notifikasi"><div class="alert alert-success">
             <p> Daftar User telah berhasil !</p>

@@ -2,7 +2,7 @@
 <div class="content-wrapper">
 	<section class="content-header">
 		<h1>
-			<i class="fa fa-edit" style="color:green"> </i> Laporan RL4
+			<i class="fa fa-edit" style="color:green"> </i> Laporan RL 4B
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="<?php echo base_url('dashboard'); ?>"><i class="fa fa-dashboard"></i>&nbsp; Dashboard</a></li>
@@ -52,7 +52,7 @@
                                 <br><input type="submit" class="btn btn-warning" value="Cari">
                             </div>
 							<div class="col-md-3 col-sm-3 col-xs-3" align="right">
-								<br><a href="<?php echo base_url("data/cetak_all_laporan_rl4?bulan=".$search['bulan'].'&tahun='.$search['tahun'].'&n_poli='.$search['poli']) ?>" type="button" class="btn btn-primary"><i class="fa fa-print"></i> Cetak RL4</a>
+								<br><a href="<?php echo base_url("data/cetak_all_laporan_rl4?bulan=".$search['bulan'].'&tahun='.$search['tahun'].'&n_poli='.$search['poli']) ?>" type="button" class="btn btn-primary"><i class="fa fa-print"></i> Cetak RL 4B</a>
                             </div>
                         </form>
 					</div>
@@ -84,7 +84,7 @@
 											<td><?php echo $rows->nama_dokter ?></td>
 											<td>
 												<a href="<?= base_url('data/cetak_laporan_rl4/' . $rows->id_daftar); ?>" target="_blank"><button class="btn btn-primary">
-                                                            <i class="fa fa-print"></i> Cetak RL4</button></a>
+                                                            <i class="fa fa-print"></i> Cetak RL 4B</button></a>
 											</td>
 										</tr>
 										<?php $no++; } ?>

@@ -4,13 +4,7 @@
     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Daftar Antrian</h2>
 
     <!-- Icon Divider -->
-    <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-            <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-    </div>
+
 
 
     <div class="container">
@@ -32,26 +26,27 @@
                         <label>Jenis Kelamin</label>
                         <input type="text" id="nama" name="j_kel" class="form-control" value="<?= $this->session->userdata('jenis_kelamin') ?>" readonly required>
                     </div>
-
+                    <div>
+                        <label>Tanggal Kunjung</label>
+                        <input type="date" id="tgl_kunjung" name="tgl_kunjung" class="form-control" value="<?php $newDate = date('Y-m-d', strtotime('tomorrow'));
+                                                                                                            echo $newDate; ?>" readonly>
+                    </div>
                     <div>
                         <label>Jenis Pasien</label>
                         <select id="jenis_kelamin" name="jns_pasien" class="form-control" required>
-                            <option disabled selected style="display:none">--Pilih Jenis Pasien--</option>
-                            <?php foreach($datajenis as $dj) : ?>
+                            <option disabled selected style="display:none" value="">--Pilih Jenis Pasien--</option>
+                            <?php foreach ($datajenis as $dj) : ?>
                                 <option value="<?= $dj->id_jns_pasien ?>"><?= $dj->jns_pasien ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
 
-                    <div>
-                        <label>Tanggal Kunjung</label>
-                        <input type="date" id="tgl_lahir" name="tgl_kunjung" class="form-control" value="">
-                    </div>
+
 
                     <div>
                         <label>Jenis Kunjung</label>
                         <select id="jenis_kelamin" name="kunjung" class="form-control" required>
-                            <option disabled selected style="display:none">--Pilih Jenis Kunjung--</option>
+                            <option disabled selected style="display:none" value="">--Pilih Jenis Kunjung--</option>
                             <option value="Lama">Lama</option>
                             <option value="Baru">Baru</option>
                         </select>
@@ -60,8 +55,8 @@
                     <div>
                         <label>Cara Kunjung</label>
                         <select id="jenis_kelamin" name="cara_kunjung" class="form-control" required>
-                            <option disabled selected style="display:none">--Pilih Cara Kunjung--</option>
-                            <?php foreach($datakunjung as $dk) : ?>
+                            <option disabled selected style="display:none" value="">--Pilih Cara Kunjung--</option>
+                            <?php foreach ($datakunjung as $dk) : ?>
                                 <option value="<?= $dk->id_kunjung ?>"><?= $dk->cara_kunjung ?></option>
                             <?php endforeach; ?>
                         </select>
@@ -70,8 +65,8 @@
                     <div>
                         <label>Dokter</label>
                         <select name="dokter" class="form-control" required>
-                            <option disabled selected style="display:none">--Pilih Dokter--</option>
-                            <?php foreach($datadokter as $dd) : ?>
+                            <option disabled selected style="display:none" value="">--Pilih Dokter--</option>
+                            <?php foreach ($datadokter as $dd) : ?>
                                 <option value="<?= $dd->id_dokter ?>"><?= $dd->nama_poli ?> -- <?= $dd->nama_dokter ?></option>
                             <?php endforeach; ?>
                         </select>
@@ -81,7 +76,8 @@
                     <div>
                         <input type="submit" name="" value="Daftar Antrian" class="btn btn-info">
                     </div>
-
+                    <br><br>
+                    <br><br>
                 </form>
             </div>
         </div>

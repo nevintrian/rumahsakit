@@ -17,7 +17,7 @@
             <div class="col-md-12">
                 <div class="box box-primary">
                     <div class="box-header with-border">
-                        <a href="daftar/tambah"><button class="btn btn-primary"><i class="fa fa-plus"> </i> Tambah Pasien</button></a>
+                        <a href="daftar/tambah_new"><button class="btn btn-primary"><i class="fa fa-plus"> </i> Tambah Pasien</button></a>
 
                     </div>
                     <!-- /.box-header -->
@@ -52,9 +52,9 @@
                                             <td><?= $isi['agama']; ?></td>
                                             <td><?= $isi['pekerjaan']; ?></td>
                                             <td><?= $isi['no_telp']; ?></td>
-                                            <td <?php if ($this->session->userdata('level') == 'Kepala Rekam Medik') { ?>style="width:17%;" <?php } ?>>
+                                            <td <?php if ($this->session->userdata('level') == 'Petugas Pendaftaran') { ?>style="width:17%;" <?php } ?>>
 
-                                                <?php if ($this->session->userdata('level') == 'Kepala Rekam Medik') { ?>
+                                                <?php if ($this->session->userdata('level') == 'Petugas Pendaftaran') { ?>
                                                     <a href="<?= base_url('daftar/daftarpx/' . $isi['no_rm']); ?>"><button class="btn btn-primary">
                                                             <i class="fa fa-pencil-square"> </i> Daftar Pasien </button></a>
                                                 <?php } ?>

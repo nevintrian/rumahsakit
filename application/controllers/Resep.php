@@ -64,7 +64,7 @@ class Resep extends CI_Controller
 			'id_daftar' => $id_daftar,
 			'no_rm' => $no_rm,
 			'nama_pasien' => $nama_pasien,
-			'nama_obat' => $nama_obat,
+			'id_obat' => $nama_obat,
 			'jumlah' => $jumlah,
 			'aturan_pakai' => $aturan_pakai,
 			'tgl_resep' => $tgl_resep

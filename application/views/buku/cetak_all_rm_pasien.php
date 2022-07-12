@@ -24,11 +24,16 @@
 			padding-bottom: 1.54cm;
 		}
 
-		@media print 
-{
-  @page { margin: 0; box-shadow: 0; }
-  body  { margin: 0cm; }
-}
+		@media print {
+			@page {
+				margin: 0;
+				box-shadow: 0;
+			}
+
+			body {
+				margin: 0cm;
+			}
+		}
 	</style>
 </head>
 
@@ -46,8 +51,11 @@
 		<page size="A4">
 			<div class="panel panel-default">
 				<div class="panel-header">
-					<h2><b><center>Data Riwayat Kesehatan (Medical Record) Pasien<center><b></h3>
-					<h6><center>Jl. xxxxxxxxxxxxxxx<center></h6>
+					<h2><b>
+							<center>Data Riwayat Kesehatan (Medical Record) Pasien<center><b></h3>
+										<h6>
+											<center>Jl. rs Bhakti Husada No. 11 Dsn. Krajan, Tegalharjo, Kec. Glenmore, <br>Kabupaten Banyuangi, Jawa Timur, 68466<center>
+										</h6>
 				</div>
 				<div class="panel-body">
 					<h4 class="text-center">LAPORAN REKAM MEDIS PASIEN</h4>
@@ -98,7 +106,8 @@
 											<td><?php echo $rows->jumlah ?></td>
 											<td><?php echo $rows->nama_dokter ?></td>
 										</tr>
-										<?php $no++; } ?>
+									<?php $no++;
+									} ?>
 								</tbody>
 							</table>
 						</div>

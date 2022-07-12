@@ -24,11 +24,16 @@
 			padding-bottom: 1.54cm;
 		}
 
-		@media print 
-{
-  @page { margin: 0; box-shadow: 0; }
-  body  { margin: 0cm; }
-}
+		@media print {
+			@page {
+				margin: 0;
+				box-shadow: 0;
+			}
+
+			body {
+				margin: 0cm;
+			}
+		}
 	</style>
 </head>
 
@@ -46,8 +51,9 @@
 		<page size="A4">
 			<div class="panel panel-default">
 				<div class="panel-header">
-					<h2><b><center>Laporan Resep<center><b></h3>
-					<!-- <h6><center>Jl. xxxxxxxxxxxxxxx<center></h6> -->
+					<h2><b>
+							<center>Laporan Resep<center><b></h3>
+										<!-- <h6><center>Jl. rs Bhakti Husada No. 11 Dsn. Krajan, Tegalharjo, Kec. Glenmore, <br>Kabupaten Banyuangi, Jawa Timur, 68466<center></h6> -->
 				</div>
 				<div class="panel-body">
 					<!-- <h4 class="text-center">LAPORAN REKAM MEDIS PASIEN</h4> -->
@@ -58,34 +64,34 @@
 					</table>
 					<div class="row">
 						<div class="col-sm-12">
-								<table id="example1" class="table table-bordered table-striped table" width="100%">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>No RM</th>
-                                            <th>Nama Pasien</th>
-                                            <th>Kode Resep</th>
-                                            <th>Nama Obat</th>
-                                            <th>Jumlah</th>
-                                            <th>Aturan Pakai</th>
-                                            <th>Tanggal Resep</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php $no = 1; ?>
-                                            <tr>
-                                                <td><?= $no; ?></td>
-                                                <td><?= $resep->no_rm; ?></td>
-                                                <td><?= $resep->nama_pasien; ?></td>
-                                                <td><?= $resep->kode_resep; ?></td>
-                                                <td><?= $resep->nama_obat; ?></td>
-                                                <td><?= $resep->jumlah; ?></td>
-                                                <td><?= $resep->aturan_pakai; ?></td>
-                                                <td><?= $resep->tgl_resep; ?></td>
-                                            </tr>
-                                        <?php $no++; ?>
-                                    </tbody>
-                                </table>
+							<table id="example1" class="table table-bordered table-striped table" width="100%">
+								<thead>
+									<tr>
+										<th>No</th>
+										<th>No RM</th>
+										<th>Nama Pasien</th>
+										<th>Kode Resep</th>
+										<th>Nama Obat</th>
+										<th>Jumlah</th>
+										<th>Aturan Pakai</th>
+										<th>Tanggal Resep</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php $no = 1; ?>
+									<tr>
+										<td><?= $no; ?></td>
+										<td><?= $resep->no_rm; ?></td>
+										<td><?= $resep->nama_pasien; ?></td>
+										<td><?= $resep->kode_resep; ?></td>
+										<td><?= $resep->nama_obat; ?></td>
+										<td><?= $resep->jumlah; ?></td>
+										<td><?= $resep->aturan_pakai; ?></td>
+										<td><?= $resep->tgl_resep; ?></td>
+									</tr>
+									<?php $no++; ?>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
